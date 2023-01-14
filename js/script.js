@@ -1,20 +1,35 @@
 let randomNumber = Math.floor(Math.random() * 3 + 1);
-let computerMove = "nieznany ruch";
+let computerMove = "неизвестный ход";
 if (randomNumber == 1) {
-  computerMove = "kamień";
+  computerMove = "камень";
 } else if (randomNumber == 2) {
-  computerMove = "papier";
+  computerMove = "бумага";
 } else {
-  computerMove = "nożyce";
+  computerMove = "ножницы";
 }
-let playerInput = prompt("Wybierz swój ruch! 1: kamień, 2: papier, 3: nożyce.");
+let playerInput = prompt("Выбери свой ход! 1: камень, 2: бумага, 3: ножницы.");
 
-let playerMove = "nieznany ruch";
+let playerMove = "неизвестный ход";
 
 if (playerInput == "1") {
-  playerMove = "kamień";
+  playerMove = "камень";
 } else if (playerInput == "2") {
-  playerMove = "papier";
+  playerMove = "бумага";
 } else if (playerInput == "3") {
-  playerMove = "nożyce";
+  playerMove = "ножницы";
 }
+if (computerMove == "камень" && playerMove == "бумага") {
+  printMessage("Ты выиграл!");
+} else if (computerMove == "бумага" && playerMove == "ножницы") {
+  printMessage("Ты выиграл!");
+} else if (computerMove == "ножницы" && playerMove == "камень") {
+  printMessage("Ты выиграл!");
+} else if (computerMove == "камень" && playerMove == "камень") {
+  printMessage("Ничья!");
+} else if (computerMove == "бумага" && playerMove == "бумага") {
+  printMessage("Ничья!");
+} else if (computerMove == "ножницы" && playerMove == "ножницы") {
+  printMessage("Ничья!");
+} else if (playerInput <= "0" || playerInput > "3") {
+  printMessage("Нужно выбрать ход от 1 до 3!");
+} else printMessage("Ты проиграл!");
