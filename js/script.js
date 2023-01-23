@@ -10,9 +10,6 @@ function playGame(playerInput) {
     if (argMoveId == 3) {
       return "ножницы";
     }
-
-    printMessage("Не известен ход с id " + argMoveId + ".");
-    return "неизвестный ход";
   }
   function displayResult(argComputerMove, argPlayerMove) {
     if (argComputerMove == "камень" && argPlayerMove == "бумага") {
@@ -42,15 +39,15 @@ function playGame(playerInput) {
   printMessage(result);
   console.log(playerMove, computerMove);
 }
-let playRock = document.getElementById("play-rock");
+const playRock = document.getElementById("play-rock");
 playRock.addEventListener("click", function () {
   playGame(1);
 });
-let playPaper = document.getElementById("play-paper");
+const playPaper = document.getElementById("play-paper");
 playPaper.addEventListener("click", function () {
   playGame(2);
 });
-let playScissors = document.getElementById("play-scissors");
+const playScissors = document.getElementById("play-scissors");
 playScissors.addEventListener("click", function () {
   playGame(3);
 });
